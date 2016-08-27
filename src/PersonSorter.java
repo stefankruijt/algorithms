@@ -12,15 +12,16 @@ public class PersonSorter {
     }
 
     public PersonSorter(ArrayList<Person> persons) {
-        testAlgorithm(new BubbleSort(), persons, 100000);
-        testAlgorithm(new RecursiveSelectionSort(),  persons, 100000);
+        testAlgorithm(new BubbleSort(), persons, 10000);
+        testAlgorithm(new RecursiveSelectionSort(),  persons, 10000);
     }
 
     public void testAlgorithm(SortingAlgorithm algorithm, ArrayList<Person> testData, int testRuns) {
-        int totalTestTime = 0;
+        long totalTestTime = 0;
 
         System.out.println("The persons in our list before sorting are: " + testData.toString());
         System.out.println("Tests will use sortingAlgorithm: " + algorithm.getName());
+
         for(int testRun = 0; testRun < testRuns; testRun++) {
             ArrayList<Person> data = (ArrayList<Person>) testData.clone();
 
